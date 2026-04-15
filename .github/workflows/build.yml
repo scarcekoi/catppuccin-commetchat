@@ -20,10 +20,13 @@ jobs:
             flavor=$(echo "$theme_path" | cut -d '/' -f 2)
             accent=$(echo "$theme_path" | cut -d '/' -f 3)
 
+            Flavor=$(echo "$flavor" | awk '{print toupper(substr($0,1,1)) tolower(substr($0,2))}')
+            Accent=$(echo "$accent" | awk '{print toupper(substr($0,1,1)) tolower(substr($0,2))}')
+
             dist_dir="dist/$flavor/$accent"
             mkdir -p "$dist_dir"
 
-            zip "$dist_dir/theme.json.zip" "$theme_path"
+            zip "$dist_dir/Catppuccin $Flavor $Accent.zip" "$theme_superuser"
           done
       - name: Upload dist as artifact
         uses: actions/upload-artifact@v4
