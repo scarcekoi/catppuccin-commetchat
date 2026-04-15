@@ -1,0 +1,41 @@
+name: Build theme ZIPs
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build-zips:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Create dist directories and build ZIPs
+        run: |
+          mkdir -p dist
+
+          find themes -name "theme.json" | while read theme_path; do
+            flavor=$(echo "$theme_path" | cut -d '/' -f 2)
+            accent=$(echo "$theme_path" | cut -d '/' -f 3)
+
+            dist_dir="dist/$flavor/$accent"
+            mkdir -p "$dist_dir"
+
+            zip "$dist_dir/theme.json.zip" "$theme_path"
+          done
+      - name: Upload dist as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist-zips
+          path: dist/
+      - name: Git
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+
+          git add dist/
+          git diff-index --quiet HEAD || git commit -m "chore: regenerate files"
+
+          git push origin HEAD:${{ github.ref }}
