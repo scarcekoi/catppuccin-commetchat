@@ -1,0 +1,45 @@
+{
+  "base": "light",
+  "settings": {
+    "caulkBorders": true,
+    "caulkBorderRadius": 10,
+    "caulkStrokeThickness": 1
+  },
+  "colorScheme": {
+    "seed": "#04A5E5",
+    "dynamicSchemeVariant": "tonalSpot",
+
+    "primary": "#04A5E5",
+    "onPrimary": "#DCE0E8",
+    "primaryContainer": "#CCD0DA",
+    "onPrimaryContainer": "#04A5E5",
+
+    "secondary": "#1E66F5",
+    "onSecondary": "#DCE0E8",
+
+    "surface": "#EFF1F5",
+    "onSurface": "#4C4F69",
+    "onSurfaceVariant": "#6C6F85",
+
+    "surfaceDim": "#E6E9EF",
+    "surfaceBright": "#CCD0DA",
+
+    "surfaceContainerLowest": "#DCE0E8",
+    "surfaceContainerLow": "#E6E9EF",
+    "surfaceContainer": "#EFF1F5",
+    "surfaceContainerHigh": "#CCD0DA",
+    "surfaceContainerHighest": "#BCC0CC",
+
+    "outline": "#BCC0CC",
+    "outlineVariant": "#ACB0BE",
+
+    "error": "#D20F39",
+    "onError": "#DCE0E8",
+
+    "codeHighlight": "#04A5E5",
+    "links": "#1E66F5"
+  },
+  "foundation": {
+    "color": "#DCE0E8"
+  }
+}

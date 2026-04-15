@@ -1,0 +1,60 @@
+---
+whiskers:
+  version: "^2.9.0"
+  matrix:
+    - flavor
+    - accent
+  filename: "themes/{{ flavor.identifier }}/{{ accent }}/theme.json"
+  hex_format: "#{{R}}{{G}}{{B}}{{Z}}"
+caulk:
+  borders: true
+  borderRadius: 10.0
+  strokeThickness: 1.0
+dynamicSchemeVariant: "tonalSpot"
+---
+{%- set accent = flavor.colors[accent] -%}
+{
+  "base": "{%- if flavor.dark -%}dark{%- elif flavor.light -%}light{%- endif -%}",
+  "settings": {
+    "caulkBorders": {{ caulk.borders }},
+    "caulkBorderRadius": {{ caulk.borderRadius }},
+    "caulkStrokeThickness": {{ caulk.strokeThickness }}
+  },
+  "colorScheme": {
+    "seed": "{{ accent.hex }}",
+    "dynamicSchemeVariant": "{{ dynamicSchemeVariant }}",
+
+    "primary": "{{ accent.hex }}",
+    "onPrimary": "{{ crust.hex }}",
+    "primaryContainer": "{{ surface0.hex }}",
+    "onPrimaryContainer": "{{ accent.hex }}",
+
+    "secondary": "{{ blue.hex }}",
+    "onSecondary": "{{ crust.hex }}",
+
+    "surface": "{{ base.hex }}",
+    "onSurface": "{{ text.hex }}",
+    "onSurfaceVariant": "{{ subtext0.hex }}",
+
+    "surfaceDim": "{{ mantle.hex }}",
+    "surfaceBright": "{{ surface0.hex }}",
+
+    "surfaceContainerLowest": "{{ crust.hex }}",
+    "surfaceContainerLow": "{{ mantle.hex }}",
+    "surfaceContainer": "{{ base.hex }}",
+    "surfaceContainerHigh": "{{ surface0.hex }}",
+    "surfaceContainerHighest": "{{ surface1.hex }}",
+
+    "outline": "{{ surface1.hex }}",
+    "outlineVariant": "{{ surface2.hex }}",
+
+    "error": "{{ red.hex }}",
+    "onError": "{{ crust.hex }}",
+
+    "codeHighlight": "{{ accent.hex }}",
+    "links": "{{ blue.hex }}"
+  },
+  "foundation": {
+    "color": "{{ crust.hex }}"
+  }
+}

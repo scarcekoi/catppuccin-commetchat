@@ -2,19 +2,19 @@
   "base": "dark",
   "settings": {
     "caulkBorders": true,
-    "caulkBorderRadius": 10.0,
-    "caulkStrokeThickness": 1.0
+    "caulkBorderRadius": 10,
+    "caulkStrokeThickness": 1
   },
   "colorScheme": {
-    "seed": "ACCENT_HEX",
+    "seed": "#CA9EE6",
     "dynamicSchemeVariant": "tonalSpot",
 
-    "primary": "ACCENT_HEX",
+    "primary": "#CA9EE6",
     "onPrimary": "#232634",
     "primaryContainer": "#414559",
-    "onPrimaryContainer": "ACCENT_HEX",
+    "onPrimaryContainer": "#CA9EE6",
 
-    "secondary": "#8CA0F3",
+    "secondary": "#8CAAEE",
     "onSecondary": "#232634",
 
     "surface": "#303446",
@@ -36,8 +36,8 @@
     "error": "#E78284",
     "onError": "#232634",
 
-    "codeHighlight": "ACCENT_HEX",
-    "links": "#8CA0F3"
+    "codeHighlight": "#CA9EE6",
+    "links": "#8CAAEE"
   },
   "foundation": {
     "color": "#232634"
