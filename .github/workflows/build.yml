@@ -26,7 +26,7 @@ jobs:
             dist_dir="dist/$flavor/$accent"
             mkdir -p "$dist_dir"
 
-            zip "$dist_dir/Catppuccin $Flavor $Accent.zip" "$theme_superuser"
+            zip "$dist_dir/Catppuccin $Flavor $Accent.zip" "$theme_path"
           done
       - name: Upload dist as artifact
         uses: actions/upload-artifact@v4
